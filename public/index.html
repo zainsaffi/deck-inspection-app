@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Deck & Balcony Inspections</title>
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #e8e8e8;
+      }
+      body {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* Phone frame wrapper */
+      #phone-frame {
+        width: 393px;
+        height: 852px;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 2px #1a1a1a;
+        background: #000;
+        position: relative;
+      }
+      /* Notch */
+      #phone-frame::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 126px;
+        height: 34px;
+        background: #000;
+        border-radius: 0 0 20px 20px;
+        z-index: 9999;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+        background: #ffffff;
+      }
+
+      /* Responsive: if window is small, remove frame */
+      @media (max-width: 500px), (max-height: 900px) {
+        body {
+          background: #fff;
+        }
+        #phone-frame {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        #phone-frame::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="phone-frame">
+      <div id="root"></div>
+    </div>
+  </body>
+</html>

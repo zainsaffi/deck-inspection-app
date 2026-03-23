@@ -1,30 +1,54 @@
 {
   "expo": {
-    "name": "deck-inspection-app",
+    "name": "Deck & Balcony Inspections",
     "slug": "deck-inspection-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "deck-inspection",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#8CC63F"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.deckandbalconyinspections.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to take inspection photos.",
+        "NSPhotoLibraryUsageDescription": "This app needs photo library access to select inspection photos."
+      }
     },
     "android": {
+      "package": "com.deckandbalconyinspections.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#8CC63F",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "permissions": ["android.permission.CAMERA"],
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Deck & Balcony Inspections to access your camera for inspection photos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Deck & Balcony Inspections to access your photos."
+        }
+      ]
+    ]
   }
 }
